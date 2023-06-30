@@ -28,7 +28,7 @@ function playRound(playerSelection, computerSelection) {
     }
 
     else
-        return "Invalid"
+        return "Invalid. Kindly input rock, paper or scissors as your choice."
 }
 
 //loops over playRound until either user or computer reach 5 points
