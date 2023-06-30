@@ -12,23 +12,28 @@ function getComputerChoice() {
 //Consists of game logic and returns round result 
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
+    selectionMsg = `You chose ${playerSelection}. Computer chose ${computerSelection}`;
+    resultMsg = "";
 
     if (playerSelection === 'rock' && computerSelection === 'scissors' || playerSelection === 'paper' && computerSelection === 'rock' || playerSelection === 'scissors' && computerSelection === 'paper') {
         playerScore++;
-        return `You won! Computer lost! \n Player:${playerScore}, Computer:${compScore}`
+        resultMsg = "You won! Computer lost!";
     }
 
     else if (playerSelection === 'scissors' && computerSelection === 'rock' || playerSelection === 'rock' && computerSelection === 'paper' || playerSelection === 'paper' && computerSelection === 'scissors') {
         compScore++;
-        return `You lose! Computer won! \n Player:${playerScore}, Computer:${compScore}`
+        resultMsg = "Computer won! You lost!";
     }
 
-    else if (playerSelection === computerSelection) {
-        return `It's a tie! \n Player:${playerScore}, Computer:${compScore}`
-    }
+    else if (playerSelection === computerSelection) 
+        resultMsg = "It's a tie!";
 
     else
-        return "Invalid. Kindly input rock, paper or scissors as your choice."
+        resultMsg = "Invalid. \nKindly input rock, paper or scissors as your choice.";
+
+    scoreMsg = `Player:${playerScore}, Computer:${compScore}`;
+    
+    return `${selectionMsg} \n${resultMsg} \n${scoreMsg}`
 }
 
 //loops over playRound until either user or computer reach 5 points
