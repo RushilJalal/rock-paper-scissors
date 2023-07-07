@@ -5,6 +5,6 @@ Click [here](https://rushiljalal.github.io/rock-paper-scissors/) to play!
 
 ### Credits
 
-[Fist icons created by Cuputo - Flaticon](https://www.flaticon.com/free-icons/fist)
-[Open hands icons created by Icon Mart - Flaticon](https://www.flaticon.com/free-icons/open-hands)
-[Scissors icons created by Cap Cool - Flaticon](https://www.flaticon.com/free-icons/rock-paper-scissors)
+[Fist icons created by Cuputo - Flaticon](https://www.flaticon.com/free-icons/fist)<br>
+[Open hands icons created by Icon Mart - Flaticon](https://www.flaticon.com/free-icons/open-hands)<br>
+[Scissors icons created by Cap Cool - Flaticon](https://www.flaticon.com/free-icons/rock-paper-scissors)<br>
