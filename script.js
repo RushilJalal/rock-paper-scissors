@@ -1,15 +1,12 @@
 choiceList = ['rock', 'paper', 'scissors'];
 let playerScore = compScore = 0;
 
-//choice played by computer
-//returns a randomly generated choice from the available choices in choiceList. 
 function getComputerChoice() {
     const randIndex = Math.floor(Math.random() * choiceList.length);
     const compChoice = choiceList[randIndex];
     return compChoice;
 }
 
-//Consists of game logic and returns round result 
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     selectionMsg = `You chose ${playerSelection}. Computer chose ${computerSelection}`;
@@ -39,9 +36,9 @@ function playRound(playerSelection, computerSelection) {
 //loops over playRound until either user or computer reach 5 points
 function game() {
     while (playerScore < 5 && compScore < 5) {
-        playerSelection = prompt("Enter your choice");
+        playerSelection = 'rock';
         computerSelection = getComputerChoice();
-        alert(playRound(playerSelection, computerSelection));
+        playRound(playerSelection, computerSelection);
     }
 
     if (playerScore === 5)
@@ -51,5 +48,5 @@ function game() {
         alert("Computer won the game!");
 }
 
-game();
+
 
