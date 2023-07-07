@@ -25,14 +25,14 @@ function playRound(playerSelection, computerSelection) {
         resultMsg = "Computer won! You lost!";
     }
 
-    else if (playerSelection === computerSelection) 
+    else if (playerSelection === computerSelection)
         resultMsg = "It's a tie!";
 
     else
         resultMsg = "Invalid. \nKindly input rock, paper or scissors as your choice.";
 
     scoreMsg = `Player:${playerScore}, Computer:${compScore}`;
-    
+
     return `${selectionMsg} \n${resultMsg} \n${scoreMsg}`
 }
 
