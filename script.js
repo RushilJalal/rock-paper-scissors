@@ -51,3 +51,20 @@ function playRound() {
     scoreMsg.textContent = `Player:${playerScore}, Computer:${compScore}`;
 }
 
+function setGameOver() {
+    if (playerScore > compScore)
+        output.textContent = "🥳You won the game! Congratulations!🎉";
+    else
+        output.textContent = "😢Computer won! You lost! Better luck next time.😢";
+
+    const resetButton = document.createElement("button");
+    resetButton.textContent = "Reset";
+    resetButton.classList.add("btn", "reset-button");
+    output.appendChild(resetButton);
+    resetButton.addEventListener("click", resetGame);
+}
+
+function resetGame() {
+    location.reload(); // Reload the page to reset the game state
+}
+
