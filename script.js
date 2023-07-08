@@ -1,52 +1,53 @@
 choiceList = ['rock', 'paper', 'scissors'];
-let playerScore = compScore = 0;
 
 function getComputerChoice() {
     const randIndex = Math.floor(Math.random() * choiceList.length);
-    const compChoice = choiceList[randIndex];
-    return compChoice;
+    return choiceList[randIndex];
 }
 
-function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase();
-    selectionMsg = `You chose ${playerSelection}. Computer chose ${computerSelection}`;
-    resultMsg = "";
+let playerScore = 0;
+let compScore = 0;
+const output = document.querySelector(".output")
+const selectionMsg = document.querySelector(".selection-msg");
+const resultMsg = document.querySelector(".result-msg");
+const scoreMsg = document.querySelector(".score-msg");
+const button = document.querySelectorAll(".btn");
+
+button.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        const audio = document.querySelector('audio');
+        if (!audio) return;
+        audio.currentTime = 0;
+        audio.play();
+        playerSelection = e.currentTarget.value;
+        computerSelection = getComputerChoice();
+        playRound();
+    });
+});
+
+function playRound() {
+    selectionMsg.textContent = `You chose ${playerSelection}. Computer chose ${computerSelection}`;
 
     if (playerSelection === 'rock' && computerSelection === 'scissors' || playerSelection === 'paper' && computerSelection === 'rock' || playerSelection === 'scissors' && computerSelection === 'paper') {
         playerScore++;
-        resultMsg = "You won! Computer lost!";
+        resultMsg.textContent = "You won! Computer lost!";
     }
 
     else if (playerSelection === 'scissors' && computerSelection === 'rock' || playerSelection === 'rock' && computerSelection === 'paper' || playerSelection === 'paper' && computerSelection === 'scissors') {
         compScore++;
-        resultMsg = "Computer won! You lost!";
+        resultMsg.textContent = "Computer won! You lost!";
     }
 
     else if (playerSelection === computerSelection)
-        resultMsg = "It's a tie!";
+        resultMsg.textContent = "It's a tie!";
 
     else
-        resultMsg = "Invalid. \nKindly input rock, paper or scissors as your choice.";
+        resultMsg.textContent = "Invalid. Kindly input rock, paper or scissors as your choice.";
 
-    scoreMsg = `Player:${playerScore}, Computer:${compScore}`;
-
-    return `${selectionMsg} \n${resultMsg} \n${scoreMsg}`
-}
-
-//loops over playRound until either user or computer reach 5 points
-function game() {
-    while (playerScore < 5 && compScore < 5) {
-        playerSelection = 'rock';
-        computerSelection = getComputerChoice();
-        playRound(playerSelection, computerSelection);
+    if (playerScore === 5 || compScore === 5) {
+        setGameOver();
     }
 
-    if (playerScore === 5)
-        alert("Player won the game!");
-
-    else
-        alert("Computer won the game!");
+    scoreMsg.textContent = `Player:${playerScore}, Computer:${compScore}`;
 }
-
-
 
