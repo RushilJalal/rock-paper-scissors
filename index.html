@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors!</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://fav.farm/🔥" />
     <script src="script.js" defer></script>
 </head>
 
@@ -18,40 +19,36 @@
         <div class="options">
 
             <div class="container">
-                <button class="rock">
+                <button class="btn" value="rock">
                     <img src="imgs/fist.png" alt="rock">
                     <p>Rock</p>
                 </button>
             </div>
 
             <div class="container">
-                <button class="paper">
+                <button class="btn" value="paper">
                     <img src="imgs/palm.png" alt="paper">
                     <p>Paper</p>
                 </button>
             </div>
 
             <div class="container">
-                <button class="scissors">
-                    <img src="imgs/scissors.png" alt="paper">
+                <button class="btn" value="scissors">
+                    <img src="imgs/scissors.png" alt="scissors">
                     <p>Scissors</p>
                 </button>
             </div>
 
         </div>
 
-        <div class="round-result">
-            
-        </div>
-
-        <div class="current-score">
-
+        <div class="output">
+            <div class="selection-msg"></div>
+            <div class="result-msg"></div>
+            <div class="score-msg"></div>
         </div>
     </div>
 
-    <div class="footer">
-
-    </div>
+    <audio src="sounds/sound.mp3"></audio>
 </body>
 
 </html>
