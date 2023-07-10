@@ -16,7 +16,6 @@ const button = document.querySelectorAll(".btn");
 button.forEach(btn => {
     btn.addEventListener('click', (e) => {
         const audio = document.querySelector('audio');
-        if (!audio) return;
         audio.currentTime = 0;
         audio.play();
         playerSelection = e.currentTarget.value;
