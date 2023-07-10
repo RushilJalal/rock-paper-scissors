@@ -15,6 +15,7 @@ const button = document.querySelectorAll(".btn");
 
 button.forEach(btn => {
     btn.addEventListener('click', (e) => {
+        output.classList.remove("hidden");
         const audio = document.querySelector('audio');
         audio.currentTime = 0;
         audio.play();
