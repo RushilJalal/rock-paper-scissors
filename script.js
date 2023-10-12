@@ -58,7 +58,7 @@ function setGameOver() {
         output.textContent = "😢Computer won! You lost! Better luck next time.😢";
 
     const resetButton = document.createElement("button");
-    resetButton.textContent = "Reset";
+    resetButton.textContent = "Restart";
     resetButton.classList.add("btn", "reset-button");
     output.appendChild(resetButton);
     resetButton.addEventListener("click", resetGame);
