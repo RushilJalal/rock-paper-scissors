@@ -60,12 +60,11 @@ img {
 .output {
     display: flex;
     flex-direction: column;
-    margin: 8px;
-    padding: 10px;
+    margin: 1em;
+    padding: 1em;
     width: auto;
     align-items: center;
     justify-content: center;
-    /* width: 600px; */
     font-size: large;
     background-color: lightgoldenrodyellow;
     border: 4px solid lightsalmon;
